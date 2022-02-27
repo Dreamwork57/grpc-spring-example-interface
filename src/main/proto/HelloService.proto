@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.lbel.example.grpcspring.interfacedef;
+
+option java_multiple_files = true;
+option java_package = "com.lbel.example.grpcspring.interfacedef.lib";
+option java_outer_classname = "HelloWorldProto";
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string firstname = 1;
+  string lastname = 2;
+}
+
+message HelloReply {
+  string message = 1;
+}
